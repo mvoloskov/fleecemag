@@ -1,0 +1,224 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	backface-visibility: hidden;
+	vertical-align: inherit;
+}
+
+:root {
+	font-variant-ligatures: normal;
+	text-rendering: optimizeLegibility;
+	font-family: 'Noto Sans', sans-serif;
+	line-height: 1.5;
+	--navy: #001f3f;
+	--blue: #0074d9;
+	--aqua: #7fdbff;
+	--teal: #39cccc;
+	--olive: #3d9970;
+	--green: #2ecc40;
+	--lime: #01ff70;
+	--yellow: #ffdc00;
+	--orange: #ff851b;
+	--red: #ff4136;
+	--fuchsia: #f012be;
+	--purple: #b10dc9;
+	--maroon: #85144b;
+	--white: #ffffff;
+	--silver: #dddddd;
+	--gray: #aaaaaa;
+	--black: #111111;
+
+	/*	--accent: #f99a08;*/
+	/*	--accent--half: #f99a0888;*/
+
+	--padding-bias: 1.5em;
+	--pv: calc(var(--padding-bias) * 0.618 / 3.14 * 2);
+	--pr: calc(var(--padding-bias) * 0.618);
+	--pvhalf: calc(var(--padding-bias) * 0.618 / 3.14 * 1.5);
+	--prhalf: calc(var(--padding-bias) * 0.618 / 1.5);
+
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+body {
+	margin: 0;
+	flex-grow: 2;
+	display: flex;
+	flex-direction: column;
+}
+
+main {
+	margin: 0;
+	flex-grow: 2;
+}
+
+code,
+pre {
+	tab-size: 4;
+	font-family: monospace;
+}
+
+a {
+	color: inherit;
+	text-decoration: underline 0.5px currentColor;
+}
+
+a:hover {
+	text-decoration-thickness: 1.5px;
+}
+
+a:not([href]) {
+	text-decoration: none;
+}
+
+img {
+	display: block;
+	height: auto;
+}
+
+h1 {
+	letter-spacing: -0.05em;
+}
+
+img,
+canvas,
+iframe,
+video,
+svg,
+select,
+textarea {
+	max-width: 100%;
+}
+
+[hidden] {
+	display: none !important;
+}
+
+input {
+	background-image: url('/assets/squircle.svg');
+	background-color: transparent;
+	border: none;
+	padding: var(--pvhalf) var(--prhalf);
+	color: inherit;
+	font-size: inherit;
+	min-width: 16em;
+}
+
+input:focus {
+	outline-offset: 2px;
+}
+
+button {
+	background-image: url('/assets/squircle.svg');
+	background-color: transparent;
+	border: none;
+	padding: var(--pvhalf) var(--prhalf);
+	color: inherit;
+	font-size: inherit;
+	cursor: pointer;
+}
+
+select {
+	appearance: none;
+	background-image: url('/assets/squircle.svg');
+	background-color: transparent;
+	border: none;
+	padding: var(--pvhalf) var(--prhalf);
+	color: inherit;
+	font-size: inherit;
+	cursor: pointer;
+}
+
+textarea {
+	resize: vertical;
+}
+
+[aria-busy='true'] {
+	cursor: progress;
+}
+
+[disabled],
+[aria-disabled='true'] {
+	cursor: default;
+}
+
+[aria-controls] {
+	cursor: pointer;
+}
+
+.ih {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.container {
+	width: 100%;
+	max-width: 50rem;
+	padding: 0 1rem;
+	margin: 1em auto 0;
+}
+
+.container--wide {
+	max-width: 70rem;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.flush-top {
+	margin-top: 0;
+}
+
+.push-top {
+	margin-top: 2em;
+}
+
+.small {
+	font-size: 0.8em;
+}
+
+.squircle {
+	-webkit-mask-image: url(/assets/squircle.svg);
+	mask-image: url(/assets/squircle.svg);
+	-webkit-mask-attachment: url(/assets/squircle.svg);
+	-webkit-mask-mode: alpha;
+	mask-mode: alpha;
+}
+
+/*a {
+	color: #0064c1;
+	transition: color 300ms ease-out, box-shadow 300ms ease-out;
+	background: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1" height="1"%3E%3Crect x="0" y="0.5" width="1" height="0.5" fill="rgba(0, 100, 193, 0.35)"/%3E%3C/svg%3E') left bottom repeat-x;
+}
+
+a:visited {
+	color: #80b2e0;
+}
+
+a:active,
+a:hover {
+	outline-width: 0;
+}
+
+a:hover {
+	box-shadow: inset 0 -1px #3000c1;
+	color: #3000c1;
+	transition: color 0s, box-shadow 0s;
+}*/
