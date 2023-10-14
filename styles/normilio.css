@@ -1,3 +1,29 @@
+/* latin */
+@font-face {
+	font-family: 'Noto Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/notosans/v32/o-0IIpQlx3QUlC5A4PNr5TRASf6M7Q.woff2) format('woff2');
+}
+/* latin */
+@font-face {
+	font-family: 'Noto Sans';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/notosans/v32/o-0NIpQlx3QUlC5A4PNjFhdVZNyBx2pqPA.woff2) format('woff2');
+}
+/* latin */
+@font-face {
+	font-family: 'Noto Serif';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: 100%;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/notoserif/v22/ga6iaw1J5X9T9RW6j9bNVls-hfgvz8JcMofYTa32J4wsL2JAlAhZqFCTx8cMpKrCzi0i.woff) format('woff');
+}
+
 *,
 *::before,
 *::after {
@@ -7,40 +33,71 @@
 }
 
 :root {
+	--c1: #fdfcfd;
+	--c2: #faf9fb;
+	--c3: #f2eff3;
+	--c4: #eae7ec;
+	--c5: #e3dfe6;
+	--c6: #dbd8e0;
+	--c7: #d0cdd7;
+	--c8: #bcbac7;
+	--c9: #8e8c99;
+	--c10: #84828e;
+	--c11: #65636d;
+	--c12: #211f26;
+
+	--blue-1: #fbfdff;
+	--blue-2: #f4faff;
+	--blue-3: #e6f4fe;
+	--blue-4: #d5efff;
+	--blue-5: #c2e5ff;
+	--blue-6: #acd8fc;
+	--blue-7: #8ec8f6;
+	--blue-8: #5eb1ef;
+	--blue-9: #0090ff;
+	--blue-10: #0588f0;
+	--blue-11: #0d74ce;
+	--blue-12: #113264;
+
+	--accent: var(--blue-9);
+	--control: var(--c4);
+	--control--hover: var(--c5);
+
+	--focus: var(--accent);
+	--padding: calc(1.5em * 0.295) calc(1.5em * 0.412);
+	--focused: drop-shadow(0 0 0.2em var(--focus)) drop-shadow(0 0 0.5em var(--focus));
+
 	font-variant-ligatures: normal;
 	text-rendering: optimizeLegibility;
 	font-family: 'Noto Sans', sans-serif;
 	line-height: 1.5;
-	--navy: #001f3f;
-	--blue: #0074d9;
-	--aqua: #7fdbff;
-	--teal: #39cccc;
-	--olive: #3d9970;
-	--green: #2ecc40;
-	--lime: #01ff70;
-	--yellow: #ffdc00;
-	--orange: #ff851b;
-	--red: #ff4136;
-	--fuchsia: #f012be;
-	--purple: #b10dc9;
-	--maroon: #85144b;
-	--white: #ffffff;
-	--silver: #dddddd;
-	--gray: #aaaaaa;
-	--black: #111111;
-
-	/*	--accent: #f99a08;*/
-	/*	--accent--half: #f99a0888;*/
-
-	--padding-bias: 1.5em;
-	--pv: calc(var(--padding-bias) * 0.618 / 3.14 * 2);
-	--pr: calc(var(--padding-bias) * 0.618);
-	--pvhalf: calc(var(--padding-bias) * 0.618 / 3.14 * 1.5);
-	--prhalf: calc(var(--padding-bias) * 0.618 / 1.5);
 
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
+
+	color: var(--c12);
+	background-color: var(--c1);
+}
+
+:root.dark {
+	--c1: #121113;
+	--c2: #1a191b;
+	--c3: #232225;
+	--c4: #2b292d;
+	--c5: #323035;
+	--c6: #3c393f;
+	--c7: #49474e;
+	--c8: #625f69;
+	--c9: #6f6d78;
+	--c10: #7c7a85;
+	--c11: #b5b2bc;
+	--c12: #eeeef0;
+}
+
+::placeholder {
+	color: var(--c9);
+	opacity: 1;
 }
 
 body {
@@ -51,7 +108,6 @@ body {
 }
 
 main {
-	margin: 0;
 	flex-grow: 2;
 }
 
@@ -68,6 +124,15 @@ a {
 
 a:hover {
 	text-decoration-thickness: 1.5px;
+}
+
+a:focus {
+	outline: none;
+}
+
+a:focus-visible {
+	filter: var(--focused);
+	text-decoration: none;
 }
 
 a:not([href]) {
@@ -98,38 +163,42 @@ textarea {
 }
 
 input {
-	background-image: url('/assets/squircle.svg');
-	background-color: transparent;
+	background-color: var(--control);
 	border: none;
-	padding: var(--pvhalf) var(--prhalf);
+	padding: var(--padding);
 	color: inherit;
-	font-size: inherit;
+	font: inherit;
+	line-height: inherit;
 	min-width: 16em;
 }
 
-input:focus {
-	outline-offset: 2px;
-}
-
 button {
-	background-image: url('/assets/squircle.svg');
-	background-color: transparent;
+	background-color: var(--control);
 	border: none;
-	padding: var(--pvhalf) var(--prhalf);
+	padding: var(--padding);
 	color: inherit;
-	font-size: inherit;
+	font: inherit;
+	line-height: inherit;
 	cursor: pointer;
 }
 
 select {
 	appearance: none;
-	background-image: url('/assets/squircle.svg');
-	background-color: transparent;
+	background-color: var(--control);
 	border: none;
-	padding: var(--pvhalf) var(--prhalf);
+	padding: var(--padding);
 	color: inherit;
-	font-size: inherit;
+	font: inherit;
+	line-height: inherit;
 	cursor: pointer;
+}
+
+.focus-ring *:focus {
+	outline: none;
+}
+
+.focus-ring:focus-within {
+	filter: var(--focused);
 }
 
 textarea {
@@ -197,7 +266,6 @@ textarea {
 .squircle {
 	-webkit-mask-image: url(/assets/squircle.svg);
 	mask-image: url(/assets/squircle.svg);
-	-webkit-mask-attachment: url(/assets/squircle.svg);
 	-webkit-mask-mode: alpha;
 	mask-mode: alpha;
 }

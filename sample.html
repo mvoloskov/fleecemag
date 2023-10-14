@@ -5,17 +5,18 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Functional Training • Fleece Mag</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preload" href="/assets/logo.svg" as="image" type="image/svg+xml" />
+		<link rel="preload" href="/assets/squircle.svg" as="image" type="image/svg+xml" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&family=Noto+Serif&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="styles/normilio.css" />
 		<link rel="stylesheet" href="styles/style.css" />
+		<link rel="icon" type="image/webp" href="/assets/favicon.webp" />
 	</head>
 	<body class="article-page">
 		<header class="main-header">
 			<div class="container main-header__container">
-				<a class="back-button" href="articles" title="Back">Back</a>
-				<img class="logo" src="assets/logo.svg" width="1177" height="263" alt="Fleece mag — small things figured out" />
+				<a class="round-button round-button--ghost back-button" href="articles" title="Back">Back</a>
+				<a class="logo" href="/"></a>
 				<nav class="main-nav"><a href="articles">Articles</a> • <a href="auth">Membership</a></nav>
 			</div>
 		</header>
@@ -58,15 +59,19 @@
 				</div>
 				<section class="articles">
 					<a class="article" href="sample">
-						<div class="article__cover squircle">
-							<img class="article__image" width="1280" height="800" src="https://picsum.photos/1280/800?random=1" alt="" />
+						<div class="article__focus-ring">
+							<div class="article__cover squircle">
+								<img class="article__image" width="1280" height="800" src="/assets/samples/1.jpg" alt="" />
+							</div>
 						</div>
 						<h2 class="article__heading">Solar Roads: The Future of Renewable Energy</h2>
 						<p class="article__blurb">Solar roads combine transportation and renewable energy for a greener tomorrow.</p>
 					</a>
 					<a class="article" href="sample">
-						<div class="article__cover squircle">
-							<img class="article__image" width="1280" height="800" src="https://picsum.photos/1280/800?random=2" alt="" />
+						<div class="article__focus-ring">
+							<div class="article__cover squircle">
+								<img class="article__image" width="1280" height="800" src="/assets/samples/2.jpg" alt="" />
+							</div>
 						</div>
 						<h2 class="article__heading">The Art of Mindful Productivity</h2>
 						<p class="article__blurb">How mindfulness boosts focus, creativity, and efficiency in daily life.</p>
@@ -77,9 +82,13 @@
 					<form class="form" action="#">
 						<label class="form__field">
 							<span class="form__label">Email</span>
-							<input class="form__input" type="email" placeholder="henrietta@fleecemag.com" />
+							<div class="focus-ring">
+								<input class="form__input squircle" type="email" placeholder="henrietta@fleecemag.com" />
+							</div>
 						</label>
-						<button class="form__button">Sign up</button>
+						<div class="focus-ring">
+							<button class="form__button squircle">Sign up</button>
+						</div>
 					</form>
 					<article class="pitch">
 						<p class="flush-top">Get instant access to all articles, past and future. We'll also send you bite-sized food for thought every now and then to keep your mind occupied.</p>
@@ -91,10 +100,12 @@
 			</div>
 		</main>
 		<footer class="main-footer">
-			<div class="container main-footer__container">
+			<div class="container container--wide main-footer__container">
 				<span class="main-footer__copy">&copy; Fleece Mag, 2023</span>
-				<a href="#">Privacy policy</a> • <a href="#">Disclosures</a>
+				<a href="#">Privacy policy</a> • <a href="#">Disclosures</a> •
+				<button class="round-button theme-button" data-toggle-dark-theme>Dark theme</button>
 			</div>
 		</footer>
+		<script src="/assets/app.js" type="module"></script>
 	</body>
 </html>

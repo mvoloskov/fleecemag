@@ -8,21 +8,52 @@
 	gap: 1em;
 }
 
-.back-button {
-	background-color: transparent;
-	background-image: url(/assets/back.svg);
+.round-button {
+	max-width: 2.5em;
+	background-color: var(--control);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 1.5em;
 	aspect-ratio: 1;
 	border-radius: 100%;
 	color: transparent;
-	transition: background-color 0.1s;
+	overflow: hidden;
+	align-self: center;
 }
 
-.back-button:hover {
-	background-color: hsl(0, 0%, 90%);
+.round-button--ghost {
+	background-color: transparent;
 }
+
+.round-button--ghost:hover,
+.round-button--ghost:focus-visible {
+	background-color: var(--control);
+}
+
+.round-button:focus {
+	outline: none;
+}
+
+.round-button:focus-visible {
+	filter: var(--focused);
+}
+
+.back-button {
+	background-image: url(/assets/back.svg);
+}
+
+.theme-button {
+	background-image: url(/assets/moon.svg);
+}
+
+:root.dark .theme-button {
+	background-image: url(/assets/sun.svg);
+}
+
+/*.back-button:hover,
+.back-button:focus-visible {
+	background-color: hsl(0, 0%, 90%);
+}*/
 
 .main-nav {
 	margin-left: auto;
@@ -35,7 +66,7 @@
 }
 
 .article-body p {
-	font-family: 'Noto Serif', serif;
+	font-family: 'Noto Serif', 'Georgia', serif;
 	text-align: justify;
 	hyphens: auto;
 }
@@ -54,7 +85,28 @@
 }
 
 .logo {
+	width: 100%;
 	max-width: 11em;
+	aspect-ratio: 22 / 5;
+	background-image: url(/assets/logo.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+
+	display: flex;
+	align-items: flex-start;
+}
+
+:root.dark .logo {
+	background-image: url(/assets/logo.svg#alt);
+}
+
+.logo::after {
+	display: inline;
+	content: 'Fleecemag';
+	z-index: -1;
+	font-size: 2.1em;
+	line-height: 1;
 }
 
 .main-nav {
@@ -69,7 +121,7 @@
 
 .main-footer__container {
 	display: flex;
-	align-items: baseline;
+	align-items: center;
 	gap: 0.5em;
 }
 
@@ -80,6 +132,10 @@
 @media (max-width: 640px) {
 	.logo {
 		max-width: 8em;
+	}
+
+	.logo::after {
+		font-size: 1.5em;
 	}
 
 	.main-header {
@@ -172,6 +228,14 @@
 	align-items: flex-start;
 	justify-content: flex-start;
 	gap: 0.5em;
+}
+
+.article:focus-visible {
+	filter: none;
+}
+
+.article:focus-visible .article__focus-ring {
+	filter: var(--focused);
 }
 
 .article__image {

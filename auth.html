@@ -5,18 +5,17 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Sign in • Fleece Mag</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preload" href="/assets/logo.svg" as="image" type="image/svg+xml" />
+		<link rel="preload" href="/assets/squircle.svg" as="image" type="image/svg+xml" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&family=Noto+Serif&display=swap" rel="stylesheet" />
-		<link rel="preload" href="/assets/squircle.svg" />
-		<link rel="stylesheet" href="/styles/normilio.css" />
-		<link rel="stylesheet" href="/styles/style.css" />
+		<link rel="stylesheet" href="styles/normilio.css" />
+		<link rel="stylesheet" href="styles/style.css" />
 		<link rel="icon" type="image/webp" href="/assets/favicon.webp" />
 	</head>
 	<body>
 		<header class="main-header">
 			<div class="container row">
-				<img class="logo" src="assets/logo.svg" width="1177" height="263" alt="Fleece mag — small things figured out" />
+				<a class="logo" href="/"></a>
 				<nav class="main-nav"><a href="articles">Articles</a> • <a>Membership</a></nav>
 			</div>
 		</header>
@@ -27,25 +26,35 @@
 				<form class="form" action="#">
 					<label class="form__field">
 						<span class="form__label">Email</span>
-						<input class="form__input" type="email" placeholder="henrietta@fleecemag.com" required />
+						<div class="focus-ring">
+							<input class="form__input squircle" type="email" placeholder="henrietta@fleecemag.com" required />
+						</div>
 					</label>
 					<label class="form__field">
 						<span class="form__label">Password</span>
 						<div class="form__annotated">
-							<input class="form__input" type="password" placeholder="••••••••••" />
+							<div class="focus-ring">
+								<input class="form__input squircle" type="password" placeholder="••••••••••" />
+							</div>
 							<span class="form__description">Leave it empty, and we'll send you an email with login link.</span>
 						</div>
 					</label>
-					<button class="form__button">Sign in</button>
+					<div class="focus-ring">
+						<button class="form__button squircle">Sign in</button>
+					</div>
 				</form>
 				<h2 class="push-top">Want one?</h2>
 				<section class="sign-up">
 					<form class="form" action="#">
 						<label class="form__field">
 							<span class="form__label">Email</span>
-							<input class="form__input" type="email" placeholder="henrietta@fleecemag.com" />
+							<div class="focus-ring">
+								<input class="form__input squircle" type="email" placeholder="henrietta@fleecemag.com" />
+							</div>
 						</label>
-						<button class="form__button">Sign up</button>
+						<div class="focus-ring">
+							<button class="form__button squircle">Sign up</button>
+						</div>
 					</form>
 					<article class="pitch">
 						<p class="flush-top">Get instant access to all articles, past and future. We'll also send you bite-sized food for thought every now and then to keep your mind occupied.</p>
@@ -54,14 +63,14 @@
 						<b class="price">$8/mo</b>
 					</article>
 				</section>
-				<!-- <img src="assets/stripe.jpg" width="1850" height="1426" alt="" style="width: 28em" /> -->
 			</div>
 		</main>
 		<footer class="main-footer">
 			<div class="container main-footer__container">
-				<span class="main-footer__copy">&copy; Fleece Mag, 2023</span>
-				<a href="#">Privacy policy</a> • <a href="#">Disclosures</a>
+				<span class="main-footer__copy">&copy; Fleece Mag, 2023</span> <a href="#">Privacy policy</a> • <a href="#">Disclosures</a> •
+				<button class="round-button theme-button" data-toggle-dark-theme>Dark theme</button>
 			</div>
 		</footer>
+		<script src="/assets/app.js" type="module"></script>
 	</body>
 </html>

@@ -4,55 +4,38 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Fleece Mag</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<title>Functional Training • Fleece Mag</title>
+		<link rel="preload" href="/assets/logo.svg" as="image" type="image/svg+xml" />
+		<link rel="preload" href="/assets/squircle.svg" as="image" type="image/svg+xml" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&family=Noto+Serif&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="styles/normilio.css" />
 		<link rel="stylesheet" href="styles/style.css" />
+		<link rel="icon" type="image/webp" href="/assets/favicon.webp" />
 	</head>
 	<body class="article-page">
 		<header class="main-header">
-			<div class="container row">
-				<img class="logo" src="assets/logo.svg" width="1177" height="263" alt="Fleece mag — small things figured out" />
+			<div class="container main-header__container">
+				<div class="logo"></div>
 				<nav class="main-nav"><a href="articles">Articles</a> • <a href="auth">Membership</a></nav>
 			</div>
 		</header>
-		<main class="article-page__main">
+		<main>
 			<div class="container">
-				<img src="assets/functional-training-cover.png" width="1376" height="864" alt="" />
-				<h1>Functional Training: The Comprehensive Path to Everyday Fitness</h1>
-				<section class="fm column">
-					<cite class="fm__cite">Milo Xeon, 2023</cite>
-					<span class="fm__time">~9 min.</span>
-				</section>
-				<p>The concept of functional training has swiftly ascended in popularity within the realms of the fitness world. This unique approach, which emphasizes the real-world applicability of exercises, goes beyond the standard routines we've grown accustomed to. It's more than just a fleeting trend; it's about holistic health, strength, and everyday well-being.</p>
-
-				<h2>Understanding the Essence of Functional Training</h2>
-				<p>At its foundation, functional training is designed to replicate and enhance the movements we make every day. Instead of training muscles in isolation, as one might with conventional weightlifting, functional training brings to the fore movements like squatting, lunging, pushing, and pulling. These might seem elementary, but they're crucial. Consider the motions you go through every day&nbsp;— from sitting in a chair and then standing up, to bending down to tie your shoelaces or lifting a box.</p>
-
-				<p>Historically, this method has its roots deeply planted in the world of physical rehabilitation. It was here that the importance of helping patients return to their regular activities post-injury was first recognized. Traditional workouts aimed at building aesthetic muscles began to seem limited when compared to the broader benefits of training one's body to move efficiently and safely in everyday scenarios.</p>
-
-				<p>This versatility of functional training is one of its most striking features. Whether you’re employing kettlebells, resistance bands, TRX straps, or stability balls, the exercises can be adapted, varied, and individualized. It caters to diverse groups of people. An athlete might need agility and explosive strength, a desk-bound professional might require flexibility and postural exercises, while a senior citizen might focus on balance and joint mobility. Functional training encompasses all these needs.</p>
-
-				<h2>Tangible Benefits and Broader Implications</h2>
-				<p>When we delve into the advantages that functional training brings to the table, the list is extensive. Beyond the immediate benefits in daily life and tasks, it significantly amplifies athletic performance. Its routines are known to reduce injury risks, given the emphasis on correct posture and balanced muscle development. The importance of balance, coordination, and joint flexibility cannot be overstated, all of which see marked improvement with functional workouts.</p>
-
-				<p>One must also highlight the inherent focus on the core that functional training brings. A strong core goes beyond the coveted six-pack abs. It’s pivotal for almost every move we make. It ensures stability, protects our spine, and serves as our body's central powerhouse.</p>
-
-				<p>Yet, no methodology is without its detractors. Some critics argue that functional training doesn’t provide the specificity that certain sports or high-intensity activities demand. Others believe it's an age-old approach that’s simply been rebranded. However, the rising wave of fitness enthusiasts and professionals adopting and advocating for functional training speaks volumes about its effectiveness.</p>
-
-				<p>Looking ahead, functional training's role in the evolution of fitness seems bright and promising. We're on the cusp of a technological revolution with wearable fitness tech, virtual reality, and augmented feedback systems. These advancements could provide even more personalized training modules, making functional workouts even more tailored to individual needs and daily movement patterns.</p>
-
-				<h2>In Conclusion: A Fitness Revolution</h2>
-				<p>Functional training stands out in a saturated world of fitness methodologies. It serves as a reminder that genuine fitness transcends appearances. It's about an enhanced quality of life, ensuring our bodies are agile, capable, and robust, ready to handle daily tasks with grace and vigor. Whether a newbie or a fitness veteran, integrating functional training into your regime might not just be an upgrade; it could redefine your understanding of fitness.</p>
+				<h1>Service page</h1>
+				<ul>
+					<li><a href="articles">Articles</a></li>
+					<li><a href="auth">Membership</a></li>
+					<li><a href="sample">Sample article</a></li>
+				</ul>
 			</div>
 		</main>
 		<footer class="main-footer">
-			<div class="container main-footer__container">
+			<div class="container container--wide main-footer__container">
 				<span class="main-footer__copy">&copy; Fleece Mag, 2023</span>
-				<a href="#">Privacy policy</a> • <a href="#">Disclosures</a>
+				<a href="#">Privacy policy</a> • <a href="#">Disclosures</a> •
+				<button class="round-button theme-button" data-toggle-dark-theme>Dark theme</button>
 			</div>
 		</footer>
+		<script src="/assets/app.js" type="module"></script>
 	</body>
 </html>
