@@ -264,8 +264,8 @@ textarea {
 }
 
 .squircle {
-	-webkit-mask-image: url(/assets/squircle.svg);
-	mask-image: url(/assets/squircle.svg);
+	-webkit-mask-image: url(/assets/images/squircle.svg);
+	mask-image: url(/assets/images/squircle.svg);
 	-webkit-mask-mode: alpha;
 	mask-mode: alpha;
 }

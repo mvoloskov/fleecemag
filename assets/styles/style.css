@@ -39,15 +39,15 @@
 }
 
 .back-button {
-	background-image: url(/assets/back.svg);
+	background-image: url(/assets/images/back.svg);
 }
 
 .theme-button {
-	background-image: url(/assets/moon.svg);
+	background-image: url(/assets/images/moon.svg);
 }
 
 :root.dark .theme-button {
-	background-image: url(/assets/sun.svg);
+	background-image: url(/assets/images/sun.svg);
 }
 
 /*.back-button:hover,
@@ -88,7 +88,7 @@
 	width: 100%;
 	max-width: 11em;
 	aspect-ratio: 22 / 5;
-	background-image: url(/assets/logo.svg);
+	background-image: url(/assets/images/logo.svg);
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
@@ -98,7 +98,7 @@
 }
 
 :root.dark .logo {
-	background-image: url(/assets/logo.svg#alt);
+	background-image: url(/assets/images/logo.svg#alt);
 }
 
 .logo::after {
@@ -262,9 +262,9 @@
 	background-color: #0009;
 	color: white;
 
-	-webkit-mask-image: url(/assets/squircle.svg);
-	mask-image: url(/assets/squircle.svg);
-	-webkit-mask-attachment: url(/assets/squircle.svg);
+	-webkit-mask-image: url(/assets/images/squircle.svg);
+	mask-image: url(/assets/images/squircle.svg);
+	-webkit-mask-attachment: url(/assets/images/squircle.svg);
 	-webkit-mask-mode: alpha;
 	mask-mode: alpha;
 
