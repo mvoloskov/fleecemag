@@ -87,26 +87,16 @@
 .logo {
 	width: 100%;
 	max-width: 11em;
-	aspect-ratio: 22 / 5;
-	background-image: url(/assets/images/logo.svg);
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
-
 	display: flex;
 	align-items: flex-start;
 }
 
-:root.dark .logo {
-	background-image: url(/assets/images/logo.svg#alt);
+:root:not(.dark) .logo__image-dark {
+	display: none;
 }
 
-.logo::after {
-	display: inline;
-	content: 'Fleecemag';
-	z-index: -1;
-	font-size: 2.1em;
-	line-height: 1;
+:root.dark .logo__image-light {
+	display: none;
 }
 
 .main-nav {
@@ -132,10 +122,6 @@
 @media (max-width: 640px) {
 	.logo {
 		max-width: 8em;
-	}
-
-	.logo::after {
-		font-size: 1.5em;
 	}
 
 	.main-header {
