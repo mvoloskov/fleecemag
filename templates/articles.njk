@@ -40,7 +40,7 @@
 			</div>
 			<section class="articles">
 				{% for article in articles %}
-					{{ macros.article(article.cover, article.title, article.blurb, article.href) }}
+					{{ macros.article(article.cover, article.title, article.blurb, article.free, article.href) }}
 				{% endfor %}
 			</section>
 			{{ macros.pitch() }}

@@ -34,19 +34,20 @@
 	<h2 class="push-top">{{ title }}</h2>
 	<section class="sign-up">
 		<form class="form" action="#">
-			<label class="form__field">
-				<span class="form__label">Email</span>
+			<div class="form__field">
+				<label class="form__label" for="sign-up-email">Email</label>
 				<div class="focus-ring">
-					<input class="form__input squircle" type="email" placeholder="henrietta@fleecemag.com" />
+					<input id="sign-up-email" class="form__input squircle" type="email" name="email" placeholder="henrietta@fleecemag.com" />
 				</div>
-			</label>
+			</div>
 			<div class="focus-ring">
 				<button class="form__button squircle">Sign up</button>
 			</div>
 		</form>
 		<article class="pitch">
-			<p class="flush-top">Get instant access to all articles, past and future. We'll also send you bite-sized food for thought every now and then to keep your mind occupied.</p>
-			<p>All articles are dynamic — they update as the world changes and new info comes in.</p>
+			<p class="flush-top">Get instant access to all articles, past and future. We'll also send you bite-sized food for thought every now and then to keep your mind occupied.
+			<small>For example, the latest issue was about rock music in Cambodia before Khmer Rouge.</small></p>
+			<p>All articles are dynamic&#8239;—&#8201;they update as new info comes in. You can opt in to receive article updates.</p>
 			<p>We never write about news, politics and drama. Already better than 𝕏!</p>
 			<p class="small">By signing up, you agree to our <a href="#">privacy policy</a>.</p>
 			<b class="price">$8<small>/mo</small></b>
@@ -54,8 +55,8 @@
 	</section>
 {% endmacro %}
 
-{% macro article(cover, title, blurb, href = '#') %}
-	<a class="article" href="{{ href }}">
+{% macro article(cover, title, blurb, free, href = '#') %}
+	<a class="article {{ 'article--premium' if not free }}" href="{{ href if free else '/auth' }}">
 		<div class="article__focus-ring">
 			<div class="article__cover squircle">
 				<img class="article__image" width="1280" height="800" src="{{ cover }}" alt="" />

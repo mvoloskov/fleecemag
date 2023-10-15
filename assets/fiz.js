@@ -12,7 +12,7 @@ var imageZoom = (function () {
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background-color: white;
+		background-color: var(--c1);
 		z-index: 99998;
 		pointer-events: none;
 	}

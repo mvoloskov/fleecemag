@@ -33,9 +33,8 @@ export const generateArticles = () => {
 		const name = filename.split('.')[0]
 		articles.push({ ...data, content, href: `/articles/${name}.html` })
 		const [year] = name.split('-')
-		const { title, cover, author } = data
 		const readtime = `~${getReadtime(content)} min.`
-		const result = njk.render('article.njk', { cover, title, author, year, readtime, html, currentYear })
+		const result = njk.render('article.njk', { year, readtime, html, currentYear, ...data })
 		fs.writeFileSync(`public/articles/${name}.html`, result, { flag: 'w+' })
 	})
 

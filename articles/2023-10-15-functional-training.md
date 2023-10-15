@@ -3,6 +3,7 @@ title: Functional Training — The Comprehensive Path to Everyday Fitness
 cover: '/assets/samples/1.jpg'
 author: Milo Xeon
 blurb: Solar roads combine transportation and renewable energy for a greener tomorrow.
+free: true
 ---
 
 The concept of functional training has swiftly ascended in popularity within the realms of the fitness world. This unique approach, which emphasizes the real-world applicability of exercises, goes beyond the standard routines we've grown accustomed to. It's more than just a fleeting trend; it's about holistic health, strength, and everyday well-being.
