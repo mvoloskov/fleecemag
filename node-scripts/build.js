@@ -3,6 +3,15 @@ import matter from 'gray-matter'
 import MarkdownIt from 'markdown-it'
 import nunjucks from 'nunjucks'
 
+const currentYear = new Date().getFullYear()
+
+const getReadtime = text => {
+	const wordsPerMinute = 200
+	const words = text.split(/\s+/).length
+	const readtime = Math.ceil(words / wordsPerMinute)
+	return Math.max(readtime, 1)
+}
+
 const md = new MarkdownIt({ html: true, typographer: true })
 const njk = nunjucks.configure('templates', {
 	autoescape: true,
@@ -22,20 +31,20 @@ const generateArticles = () => {
 		articles.push({ ...data, content, href: `articles/${name}.html` })
 		const [year] = name.split('-')
 		const { title, cover, author } = data
-		const readtime = '~9 min.'
-		const result = njk.render('article.njk', { cover, title, author, year, readtime, html })
+		const readtime = `~${getReadtime(content)} min.`
+		const result = njk.render('article.njk', { cover, title, author, year, readtime, html, currentYear })
 		fs.writeFileSync(`public/articles/${name}.html`, result, { flag: 'w' })
 	})
 
-	const articlesPage = njk.render('articles.njk', { articles })
+	const articlesPage = njk.render('articles.njk', { articles, currentYear })
 	fs.writeFileSync(`public/articles/index.html`, articlesPage, { flag: 'w' })
 }
 
 const generatePages = () => {
-	const index = njk.render('index.njk')
+	const index = njk.render('index.njk', { currentYear })
 	fs.writeFileSync(`public/index.html`, index, { flag: 'w' })
 
-	const auth = njk.render('auth.njk')
+	const auth = njk.render('auth.njk', { currentYear })
 	fs.writeFileSync(`public/auth.html`, auth, { flag: 'w' })
 }
 
