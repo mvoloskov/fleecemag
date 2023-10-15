@@ -9,9 +9,21 @@
 		<link rel="stylesheet" href="/assets/styles/normilio.css" />
 		<link rel="stylesheet" href="/assets/styles/style.css" />
 		<link rel="icon" type="image/webp" href="/assets/images/favicon.webp" />
-		{% block head %}{% endblock %}
+		<script src="/assets/turbo.js" type="module" async></script>
 	</head>
 	<body>
+		<div class="ih" aria-hidden="true">
+			<img alt="" src="/assets/images/sun.svg" />
+			<img alt="" src="/assets/images/moon.svg" />
+			<img alt="" src="/assets/images/logo.svg" />
+			<img alt="" src="/assets/images/logo.svg#alt" />
+			<img alt="" src="/assets/images/back.svg" />
+			<img alt="" src="/assets/images/back.svg#alt" />
+			<img alt="" src="/assets/images/down.svg" />
+			<img alt="" src="/assets/images/down.svg#alt" />
+			<img alt="" src="/assets/images/article.svg" />
+			<img alt="" src="/assets/images/article.svg#alt" />
+		</div>
 		<header class="main-header">
 			<div class="container {{ "container--wide" if wide }} main-header__container">
 				{% if linkback %}
@@ -32,19 +44,7 @@
 				<button class="round-button theme-button" data-toggle-dark-theme>Dark theme</button>
 			</div>
 		</footer>
-		<div class="ih" aria-hidden="true">
-			<img alt="" src="/assets/images/sun.svg" />
-			<img alt="" src="/assets/images/moon.svg" />
-			<img alt="" src="/assets/images/squircle.svg" />
-			<img alt="" src="/assets/images/logo.svg" />
-			<img alt="" src="/assets/images/logo.svg#alt" />
-			<img alt="" src="/assets/images/back.svg" />
-			<img alt="" src="/assets/images/back.svg#alt" />
-			<img alt="" src="/assets/images/down.svg" />
-			<img alt="" src="/assets/images/down.svg#alt" />
-			<img alt="" src="/assets/images/article.svg" />
-			<img alt="" src="/assets/images/article.svg#alt" />
-		</div>
+		{% block scripts %}{% endblock %}
 		<script src="/assets/app.js" type="module"></script>
 	</body>
 </html>
