@@ -88,14 +88,6 @@
 	align-items: flex-start;
 }
 
-:root:not(.dark) .logo__image-dark {
-	display: none;
-}
-
-:root.dark .logo__image-light {
-	display: none;
-}
-
 .main-nav {
 	display: flex;
 	gap: 0.5em;
@@ -212,7 +204,7 @@
 }
 
 .article__image {
-	transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+	transition: transform 0.4s ease;
 }
 
 .article:not(.article--premium):hover .article__image {

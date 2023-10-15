@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 	backface-visibility: hidden;
 	vertical-align: inherit;
-	transition: var(--bg-transition);
+	color: inherit;
 }
 
 :root {
@@ -37,7 +37,8 @@
 	--accent: var(--blue-9);
 	--control: var(--c4);
 	--control--hover: var(--c6);
-	--bg-transition: background 0.1s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
+	--transition-duration: 0.2s;
+	--bg-transition: background var(--transition-duration);
 
 	--focus: var(--accent);
 	--padding: calc(1.5em * 0.295) calc(1.5em * 0.412);
@@ -55,6 +56,7 @@
 
 	color: var(--c12);
 	background-color: var(--c1);
+	transition: var(--bg-transition), color var(--transition-duration);
 }
 
 :root.dark {
@@ -227,47 +229,6 @@ select:focus-visible {
 	background-image: url(/assets/images/down.svg#alt);
 }
 
-/*.focus-ring *:focus {
-	outline: none;
-}
-
-.focus-ring:focus-within {
-	outline: var(--focused);
-}*/
-/*.focus-ring {*/
-/*	padding: 0.2em;*/
-/*	margin: -0.2em;*/
-/*	position: relative;*/
-/*}*/
-
-/*
-.focus-ring::after {
-	display: block;
-	content: '';
-	position: absolute;
-	inset: 0;
-	z-index: -1;
-	background-image: url(/assets/images/squircle.svg#alt);
-	background-color: red;
-	border-radius: 0.7em;
-	opacity: 0;
-	transition: opacity 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.focus-ring:focus-within::after {
-	opacity: 1;
-}
-*/
-/*.focus-ring:focus-within * {
-	background-image: url(/assets/images/squircle.svg#alt);
-	background-repeat: no-repeat;
-}
-*/
-/*.focus-ring * {
-	background-image: url(/assets/images/squircle.svg#alt);
-	background-repeat: no-repeat;
-}*/
-
 textarea {
 	resize: vertical;
 }
@@ -335,6 +296,14 @@ textarea {
 	mask-image: url(/assets/images/squircle.svg);
 	-webkit-mask-mode: alpha;
 	mask-mode: alpha;
+}
+
+:root:not(.dark) .icon__dark {
+	display: none;
+}
+
+:root.dark .icon__light {
+	display: none;
 }
 
 /*a {
