@@ -42,6 +42,10 @@
 	background-image: url(/assets/images/back.svg);
 }
 
+:root.dark .back-button {
+	background-image: url(/assets/images/back.svg#alt);
+}
+
 .theme-button {
 	background-image: url(/assets/images/moon.svg);
 }
@@ -49,11 +53,6 @@
 :root.dark .theme-button {
 	background-image: url(/assets/images/sun.svg);
 }
-
-/*.back-button:hover,
-.back-button:focus-visible {
-	background-color: hsl(0, 0%, 90%);
-}*/
 
 .main-nav {
 	margin-left: auto;
