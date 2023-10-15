@@ -47,7 +47,8 @@
 }
 
 .back-button {
-	max-width: 1.7em;
+	max-width: unset;
+	width: 2em;
 }
 
 .back-button svg {
