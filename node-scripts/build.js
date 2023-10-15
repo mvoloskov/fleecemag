@@ -19,7 +19,7 @@ const njk = nunjucks.configure('templates', {
 	lstripBlocks: true,
 })
 
-const generateArticles = () => {
+export const generateArticles = () => {
 	const articleFiles = fs.readdirSync('articles')
 	const articles = []
 
@@ -38,18 +38,21 @@ const generateArticles = () => {
 
 	const articlesPage = njk.render('articles.njk', { articles, currentYear })
 	fs.writeFileSync(`public/articles/index.html`, articlesPage, { flag: 'w' })
+	console.log(new Date(), 'Articles built')
 }
 
-const generatePages = () => {
+export const generatePages = () => {
 	const index = njk.render('index.njk', { currentYear })
 	fs.writeFileSync(`public/index.html`, index, { flag: 'w' })
 
 	const auth = njk.render('auth.njk', { currentYear })
 	fs.writeFileSync(`public/auth.html`, auth, { flag: 'w' })
+	console.log(new Date(), 'Static pages generated')
 }
 
-const moveAssets = () => {
+export const moveAssets = () => {
 	fs.cpSync('assets', 'public/assets', { recursive: true })
+	console.log(new Date(), 'Assets moved')
 }
 
 generateArticles()

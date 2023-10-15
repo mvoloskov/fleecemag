@@ -3,7 +3,8 @@
 	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
-		"build": "node node-scripts/build.js"
+		"build": "node node-scripts/build.js",
+		"dev": "node node-scripts/watch.js"
 	},
 	"author": "Milo Xeon",
 	"license": "UNLICENSED",
@@ -11,5 +12,8 @@
 		"gray-matter": "^4.0.3",
 		"markdown-it": "^13.0.2",
 		"nunjucks": "^3.2.4"
+	},
+	"devDependencies": {
+		"chokidar": "^3.5.3"
 	}
 }
