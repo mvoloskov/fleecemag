@@ -28,7 +28,7 @@ const generateArticles = () => {
 		const { data, content } = matter(article)
 		const html = md.render(content)
 		const name = filename.split('.')[0]
-		articles.push({ ...data, content, href: `articles/${name}.html` })
+		articles.push({ ...data, content, href: `/articles/${name}.html` })
 		const [year] = name.split('-')
 		const { title, cover, author } = data
 		const readtime = `~${getReadtime(content)} min.`
