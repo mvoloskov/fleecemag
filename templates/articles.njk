@@ -1,0 +1,50 @@
+{% set wide = true %}
+{% extends "page.njk" %}
+{% import "macros.njk" as macros %}
+
+{% block head %}
+	<title>Articles • Fleece Mag</title>
+{% endblock %}
+
+{% block nav %}
+	<nav class="main-nav"><a>Articles</a> • <a href="/auth">Membership</a></nav>
+{% endblock %}
+
+{% block main %}
+	<main>
+		<div class="container container--wide">
+			<div class="row row--center">
+				<h1 class="page-title">Articles</h1>
+				<div class="focus-ring focus-ring--arrow">
+					<select class="squircle">
+						<option selected disabled hidden>Category…</option>
+						<optgroup label="Health and fitness">
+							<option>All</option>
+							<option>Body</option>
+							<option>Mind</option>
+							<option>Sports</option>
+						</optgroup>
+						<optgroup label="Electronic things">
+							<option>All</option>
+							<option>Computers</option>
+							<option>Gadgets</option>
+						</optgroup>
+						<option>Creativity and hobbies</option>
+						<option>Quality content</option>
+						<option>Smoking</option>
+						<option>Nice things</option>
+						<option>Home</option>
+						<option>Clothing</option>
+					</select>
+				</div>
+			</div>
+			<section class="articles">
+				{% for article in articles %}
+					{{ macros.article(article.cover, article.title, article.blurb, article.href) }}
+				{% endfor %}
+			</section>
+			{{ macros.pitch() }}
+		</div>
+	</main>
+{% endblock %}
+

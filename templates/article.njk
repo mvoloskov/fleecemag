@@ -1,0 +1,30 @@
+{% set linkback = "/articles" %}
+{% extends "page.njk" %}
+{% import "macros.njk" as macros %}
+
+{% block head %}
+	<title>{{ title }} • Fleece Mag</title>
+{% endblock %}
+
+{% block nav %}
+	<nav class="main-nav"><a href="/articles">Articles</a> • <a href="/auth">Membership</a></nav>
+{% endblock %}
+
+{% block main %}
+	<main>
+		<div class="container article-body">
+			<img class="squircle" src="{{ cover }}" width="1280" height="800" alt="" />
+			<h1>{{ title }}</h1>
+			<section class="fm column">
+				<cite class="fm__cite">{{ author }}, {{ year }}</cite>
+				<span class="fm__time">{{ readtime }}</span>
+			</section>
+			{{ html | safe }}
+		</div>
+		<div class="container">
+			{{ macros.readNext() }}
+			{{ macros.pitch() }}
+		</div>
+	</main>
+{% endblock %}
+

@@ -1,0 +1,41 @@
+{% extends "page.njk" %}
+{% import "macros.njk" as macros %}
+
+{% block head %}
+	<title>Sign in • Fleece Mag</title>
+{% endblock %}
+
+{% block nav %}
+	<nav class="main-nav"><a href="/articles">Articles</a> • <a>Membership</a></nav>
+{% endblock %}
+
+{% block main %}
+	<main>
+		<div class="container">
+			<h1 class="ih">Membership</h1>
+			<h2 class="push-top">Already have a membership?</h2>
+			<form class="form" action="#">
+				<label class="form__field">
+					<span class="form__label">Email</span>
+					<div class="focus-ring">
+						<input class="form__input squircle" type="email" placeholder="henrietta@fleecemag.com" required />
+					</div>
+				</label>
+				<label class="form__field">
+					<span class="form__label">Password</span>
+					<div class="form__annotated">
+						<div class="focus-ring">
+							<input class="form__input squircle" type="password" placeholder="••••••••••" />
+						</div>
+						<span class="form__description">Leave it empty, and we'll send you an email with login link.</span>
+					</div>
+				</label>
+				<div class="focus-ring">
+					<button class="form__button squircle">Sign in</button>
+				</div>
+			</form>
+			{{ macros.pitch("Want one?") }}
+		</div>
+	</main>
+{% endblock %}
+

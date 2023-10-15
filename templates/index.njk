@@ -1,0 +1,22 @@
+{% extends "page.njk" %}
+
+{% block head %}
+	<title>Fleece Mag</title>
+{% endblock %}
+
+{% block nav %}
+	<nav class="main-nav"><a href="/articles">Articles</a> • <a href="/auth">Membership</a></nav>
+{% endblock %}
+
+{% block main %}
+	<main>
+		<div class="container">
+			<h1>Service page</h1>
+			<ul>
+				<li><a href="articles">Articles</a></li>
+				<li><a href="auth">Membership</a></li>
+				<li><a href="sample">Sample article</a></li>
+			</ul>
+		</div>
+	</main>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% macro readNext() %}
+	<div class="row push-top">
+		<h2>Read next</h2>
+		<div class="link-with-icon">
+			<div class="icon" aria-hidden="true">
+				<img class="icon__light" width="15" height="15" src="/assets/images/article.svg" alt="" />
+				<img class="icon__dark" width="15" height="15" src="/assets/images/article.svg#alt" alt="" />
+			</div>
+			<a href="articles">All articles</a>
+		</div>
+	</div>
+	<section class="articles">
+		<a class="article" href="sample">
+			<div class="article__focus-ring">
+				<div class="article__cover squircle">
+					<img class="article__image" width="1280" height="800" src="/assets/samples/1.jpg" alt="" />
+				</div>
+			</div>
+			<h2 class="article__heading">Solar Roads: The Future of Renewable Energy</h2>
+			<p class="article__blurb">Solar roads combine transportation and renewable energy for a greener tomorrow.</p>
+		</a>
+		<a class="article" href="sample">
+			<div class="article__focus-ring">
+				<div class="article__cover squircle">
+					<img class="article__image" width="1280" height="800" src="/assets/samples/2.jpg" alt="" />
+				</div>
+			</div>
+			<h2 class="article__heading">The Art of Mindful Productivity</h2>
+			<p class="article__blurb">How mindfulness boosts focus, creativity, and efficiency in daily life.</p>
+		</a>
+	</section>
+{% endmacro %}
+
+{% macro pitch(title = 'Get membership') %}
+	<h2 class="push-top">{{ title }}</h2>
+	<section class="sign-up">
+		<form class="form" action="#">
+			<label class="form__field">
+				<span class="form__label">Email</span>
+				<div class="focus-ring">
+					<input class="form__input squircle" type="email" placeholder="henrietta@fleecemag.com" />
+				</div>
+			</label>
+			<div class="focus-ring">
+				<button class="form__button squircle">Sign up</button>
+			</div>
+		</form>
+		<article class="pitch">
+			<p class="flush-top">Get instant access to all articles, past and future. We'll also send you bite-sized food for thought every now and then to keep your mind occupied.</p>
+			<p>We never write about news, politics and drama. Already better than 𝕏!</p>
+			<p class="small">By signing up, you agree to our <a href="#">privacy policy</a>.</p>
+			<b class="price">$8<small>/mo</small></b>
+		</article>
+	</section>
+{% endmacro %}
+
+{% macro article(cover, title, blurb, href = '#') %}
+	<a class="article" href="{{ href }}">
+		<div class="article__focus-ring">
+			<div class="article__cover squircle">
+				<img class="article__image" width="1280" height="800" src="{{ cover }}" alt="" />
+			</div>
+		</div>
+		<h2 class="article__heading">{{ title }}</h2>
+		<p class="article__blurb">{{ blurb }}</p>
+	</a>
+{% endmacro %}

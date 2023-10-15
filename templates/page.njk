@@ -4,36 +4,30 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Functional Training • Fleece Mag</title>
 		<link rel="preload" href="/assets/images/logo.svg" as="image" type="image/svg+xml" />
 		<link rel="preload" href="/assets/images/squircle.svg" as="image" type="image/svg+xml" />
 		<link rel="stylesheet" href="/assets/styles/normilio.css" />
 		<link rel="stylesheet" href="/assets/styles/style.css" />
 		<link rel="icon" type="image/webp" href="/assets/images/favicon.webp" />
+		{% block head %}{% endblock %}
 	</head>
-	<body class="article-page">
+	<body>
 		<header class="main-header">
-			<div class="container main-header__container">
-				<a class="logo">
-					<img class="logo__image-light" src="/assets/images/logo.svg" width="1177" height="263" alt="Fleecemag" />
-					<img class="logo__image-dark" src="/assets/images/logo.svg#alt" width="1177" height="263" alt="Fleecemag" />
+			<div class="container {{ "container--wide" if wide }} main-header__container">
+				{% if linkback %}
+					<a class="round-button round-button--ghost back-button" href="{{ linkback }}" title="Back">Back</a>
+				{% endif %}
+				<a class="logo icon" href="/">
+					<img class="icon__light" src="/assets/images/logo.svg" width="1177" height="263" alt="Fleecemag" />
+					<img class="icon__dark" src="/assets/images/logo.svg#alt" width="1177" height="263" alt="Fleecemag" />
 				</a>
-				<nav class="main-nav"><a href="articles">Articles</a> • <a href="auth">Membership</a></nav>
+				{% block nav %}{% endblock %}
 			</div>
 		</header>
-		<main>
-			<div class="container">
-				<h1>Service page</h1>
-				<ul>
-					<li><a href="articles">Articles</a></li>
-					<li><a href="auth">Membership</a></li>
-					<li><a href="sample">Sample article</a></li>
-				</ul>
-			</div>
-		</main>
+		{% block main %}{% endblock %}
 		<footer class="main-footer">
 			<div class="container container--wide main-footer__container">
-				<span class="main-footer__copy">&copy; Fleece Mag, 2023</span>
+				<span class="main-footer__copy">&copy; Fleece Mag, {{ year }}</span>
 				<a href="#">Privacy policy</a> • <a href="#">Disclosures</a> •
 				<button class="round-button theme-button" data-toggle-dark-theme>Dark theme</button>
 			</div>

@@ -1,0 +1,15 @@
+{
+	"name": "fleecemag",
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"build": "node node-scripts/build.js"
+	},
+	"author": "Milo Xeon",
+	"license": "UNLICENSED",
+	"dependencies": {
+		"gray-matter": "^4.0.3",
+		"markdown-it": "^13.0.2",
+		"nunjucks": "^3.2.4"
+	}
+}
