@@ -13,13 +13,16 @@ const getReadtime = text => {
 }
 
 const md = new MarkdownIt({ html: true, typographer: true })
-const njk = nunjucks.configure('templates', {
-	autoescape: true,
-	trimBlocks: true,
-	lstripBlocks: true,
-})
+const getNjk = () =>
+	nunjucks.configure('templates', {
+		autoescape: true,
+		trimBlocks: true,
+		lstripBlocks: true,
+	})
 
 export const generateArticles = () => {
+	const njk = getNjk()
+
 	const articleFiles = fs.readdirSync('articles')
 	const articles = []
 
@@ -33,20 +36,21 @@ export const generateArticles = () => {
 		const { title, cover, author } = data
 		const readtime = `~${getReadtime(content)} min.`
 		const result = njk.render('article.njk', { cover, title, author, year, readtime, html, currentYear })
-		fs.writeFileSync(`public/articles/${name}.html`, result, { flag: 'w' })
+		fs.writeFileSync(`public/articles/${name}.html`, result, { flag: 'w+' })
 	})
 
 	const articlesPage = njk.render('articles.njk', { articles, currentYear })
-	fs.writeFileSync(`public/articles/index.html`, articlesPage, { flag: 'w' })
+	fs.writeFileSync(`public/articles/index.html`, articlesPage, { flag: 'w+' })
 	console.log(new Date(), 'Articles built')
 }
 
 export const generatePages = () => {
+	const njk = getNjk()
 	const index = njk.render('index.njk', { currentYear })
-	fs.writeFileSync(`public/index.html`, index, { flag: 'w' })
+	fs.writeFileSync(`public/index.html`, index, { flag: 'w+' })
 
 	const auth = njk.render('auth.njk', { currentYear })
-	fs.writeFileSync(`public/auth.html`, auth, { flag: 'w' })
+	fs.writeFileSync(`public/auth.html`, auth, { flag: 'w+' })
 	console.log(new Date(), 'Static pages generated')
 }
 
