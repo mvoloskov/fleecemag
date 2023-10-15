@@ -1,35 +1,10 @@
-/* latin */
-@font-face {
-	font-family: 'Noto Sans';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/notosans/v32/o-0IIpQlx3QUlC5A4PNr5TRASf6M7Q.woff2) format('woff2');
-}
-/* latin */
-@font-face {
-	font-family: 'Noto Sans';
-	font-style: normal;
-	font-weight: 500;
-	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/notosans/v32/o-0NIpQlx3QUlC5A4PNjFhdVZNyBx2pqPA.woff2) format('woff2');
-}
-/* latin */
-@font-face {
-	font-family: 'Noto Serif';
-	font-style: normal;
-	font-weight: 400;
-	font-stretch: 100%;
-	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/notoserif/v22/ga6iaw1J5X9T9RW6j9bNVls-hfgvz8JcMofYTa32J4wsL2JAlAhZqFCTx8cMpKrCzi0i.woff) format('woff');
-}
-
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
 	backface-visibility: hidden;
 	vertical-align: inherit;
+	transition: var(--bg-transition);
 }
 
 :root {
@@ -61,15 +36,17 @@
 
 	--accent: var(--blue-9);
 	--control: var(--c4);
-	--control--hover: var(--c5);
+	--control--hover: var(--c6);
+	--bg-transition: background 0.1s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
 
 	--focus: var(--accent);
 	--padding: calc(1.5em * 0.295) calc(1.5em * 0.412);
-	--focused: drop-shadow(0 0 0.2em var(--focus)) drop-shadow(0 0 0.5em var(--focus));
+	/*	--focused: drop-shadow(0 0 0.2em var(--focus)) drop-shadow(0 0 0.5em var(--focus));*/
+	--focused: solid 2px var(--focus);
 
 	font-variant-ligatures: normal;
 	text-rendering: optimizeLegibility;
-	font-family: 'Noto Sans', sans-serif;
+	font-family: 'Trebuchet MS', sans-serif;
 	line-height: 1.5;
 
 	display: flex;
@@ -95,11 +72,6 @@
 	--c12: #eeeef0;
 }
 
-::placeholder {
-	color: var(--c9);
-	opacity: 1;
-}
-
 body {
 	margin: 0;
 	flex-grow: 2;
@@ -122,17 +94,17 @@ a {
 	text-decoration: underline 0.5px currentColor;
 }
 
-a:hover {
-	text-decoration-thickness: 1.5px;
-}
-
 a:focus {
 	outline: none;
 }
 
 a:focus-visible {
-	filter: var(--focused);
-	text-decoration: none;
+	outline: 0.125em solid var(--focus);
+	outline-offset: 0.125em;
+}
+
+a:hover {
+	text-decoration-thickness: 1.5px;
 }
 
 a:not([href]) {
@@ -144,8 +116,9 @@ img {
 	height: auto;
 }
 
-h1 {
-	letter-spacing: -0.05em;
+h1,
+h2 {
+	letter-spacing: -0.03em;
 }
 
 img,
@@ -168,8 +141,20 @@ input {
 	padding: var(--padding);
 	color: inherit;
 	font: inherit;
+	font-size: 1.2em;
 	line-height: inherit;
 	min-width: 16em;
+	background-repeat: no-repeat;
+	transition: var(--bg-transition);
+}
+
+input:hover {
+	background-color: var(--control--hover);
+}
+
+input:focus {
+	outline: none;
+	background-image: url(/assets/images/squircle.svg#alt);
 }
 
 button {
@@ -180,6 +165,20 @@ button {
 	font: inherit;
 	line-height: inherit;
 	cursor: pointer;
+	transition: var(--bg-transition);
+}
+
+button:hover {
+	background-color: var(--control--hover);
+}
+
+button:focus {
+	outline: none;
+}
+
+button:focus-visible {
+	outline: none;
+	background-image: url(/assets/images/squircle.svg#alt);
 }
 
 select {
@@ -191,15 +190,83 @@ select {
 	font: inherit;
 	line-height: inherit;
 	cursor: pointer;
+	transition: var(--bg-transition);
 }
 
-.focus-ring *:focus {
+select:hover {
+	background-color: var(--control--hover);
+}
+
+select:focus {
+	outline: none;
+}
+
+select:focus-visible {
+	outline: none;
+	background-image: url(/assets/images/squircle.svg#alt);
+}
+
+.focus-ring--arrow {
+	position: relative;
+}
+
+.focus-ring--arrow::after {
+	display: inline-block;
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 0.5em;
+	transform: translateY(-50%);
+	background-image: url(/assets/images/down.svg);
+	width: 1em;
+	height: 1em;
+	pointer-events: none;
+}
+
+:root.dark .focus-ring--arrow::after {
+	background-image: url(/assets/images/down.svg#alt);
+}
+
+/*.focus-ring *:focus {
 	outline: none;
 }
 
 .focus-ring:focus-within {
-	filter: var(--focused);
+	outline: var(--focused);
+}*/
+/*.focus-ring {*/
+/*	padding: 0.2em;*/
+/*	margin: -0.2em;*/
+/*	position: relative;*/
+/*}*/
+
+/*
+.focus-ring::after {
+	display: block;
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background-image: url(/assets/images/squircle.svg#alt);
+	background-color: red;
+	border-radius: 0.7em;
+	opacity: 0;
+	transition: opacity 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
+.focus-ring:focus-within::after {
+	opacity: 1;
+}
+*/
+/*.focus-ring:focus-within * {
+	background-image: url(/assets/images/squircle.svg#alt);
+	background-repeat: no-repeat;
+}
+*/
+/*.focus-ring * {
+	background-image: url(/assets/images/squircle.svg#alt);
+	background-repeat: no-repeat;
+}*/
 
 textarea {
 	resize: vertical;

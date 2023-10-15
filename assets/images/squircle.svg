@@ -9,7 +9,7 @@
 		}
 
 		#alt:target {
-			--sqsize: 24px;
+			--color: #acd8fc;
 		}
 
 		.corner {
