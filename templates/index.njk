@@ -1,4 +1,7 @@
+{% set page = "index" %}
+{% set wide = true %}
 {% extends "page.njk" %}
+{% import "macros.njk" as macros %}
 
 {% block head %}
 	<title>Fleece Mag</title>
@@ -10,13 +13,47 @@
 
 {% block main %}
 	<main>
-		<div class="container">
-			<h1>Service page</h1>
-			<ul>
-				<li><a href="articles">Articles</a></li>
-				<li><a href="auth">Membership</a></li>
-				<li><a href="sample">Sample article</a></li>
-			</ul>
+		<div class="container container--absurd">
+			<div class="hero">
+				<div class="container container--wide hero__container">
+					<img class="hero__image squircle" src="/assets/images/cover.webp" width="1920" height="2351" alt="Andy Warhol, Stockholm 1968, black and white">
+					<div class="hero__form">
+						<h1 class="headline">Understatement is the new bling.</h1>
+						{{ macros.pitch('Get membership', false) }}
+					</div>
+					<p>
+						Look at Andy Warhol. He woudln't have worn blingy things. Yet, he, as well as privileged European people, emit an unexplainable aura of wealth.
+					</p>
+					<p>
+						We teach you how to <mark>mimic that aura</mark>.
+					</p>
+					<p>
+						Fleece Mag is a magazine for those who feels lost in the crazy fast-paced world of Instagram stories and Twitter drama. It's for those who value understatement and serene wealth over swag and fast money. We cover a range of topics, from what product is the most reliable one to online privacy. Our reader is the type of person to pick Stockholm over LA any day.
+					</p>
+					<p>
+						What we cover is not specific to the US or any country in general. Things we recommend are usually available in all countries.
+					</p>
+					<div class="columns">
+						<p class="columns__column columns__p">
+							We only teach condensed things what work for everyone. If we write about meditation, that means you'll be able to meditate right after you finish reading. If we write about photography, it means you will shoot impressive pictures with minimum practice. Our articles are dynamic, they get updated regularly to keep their relevance.
+						</p>
+						<div class="columns__column">
+							<p class="columns__p">
+								Every now and then, we send you small food for thought to keep your mind occupied and expose you to interesting content that is hard to come by. You can opt in to receive it via email.
+							</p>
+							<p class="columns__p">
+								We never cover drama and news in general.
+							</p>
+						</div>
+					</div>
+					<ul>
+						<li><a href="articles">Articles</a></li>
+						<li><a href="auth">Membership</a></li>
+						<li><a href="sample">Sample article</a></li>
+					</ul>
+				</div>
+			</div>
+
 		</div>
 	</main>
 {% endblock %}

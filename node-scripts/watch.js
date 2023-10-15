@@ -7,7 +7,7 @@ const has = (string, substrings) => {
 
 const watcher = watch(['articles', 'assets', 'templates'], { ignoreInitial: true })
 watcher.on('all', (_event, path) => {
-	if (has(path, ['assets'])) return moveAssets()
-	if (has(path, ['articles', 'article.njk', 'articles.njk', 'page.njk', 'macros.njk'])) return generateArticles()
-	if (has(path, ['auth.njk', 'index.njk', 'page.njk', 'macros.njk'])) return generatePages()
+	if (has(path, ['assets'])) moveAssets()
+	if (has(path, ['articles', 'article.njk', 'articles.njk', 'page.njk', 'macros.njk'])) generateArticles()
+	if (has(path, ['auth.njk', 'index.njk', 'page.njk', 'macros.njk'])) generatePages()
 })

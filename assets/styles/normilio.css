@@ -49,10 +49,12 @@
 	--focus: var(--accent);
 	--padding: calc(1.5em * 0.295) calc(1.5em * 0.412);
 	--focused: solid 2px var(--focus);
+	--serif: 'Georgia', serif;
+	--sans: 'Trebuchet MS', sans-serif;
 
 	font-variant-ligatures: normal;
 	text-rendering: optimizeLegibility;
-	font-family: 'Trebuchet MS', sans-serif;
+	font-family: var(--serif);
 	line-height: 1.5;
 
 	display: flex;
@@ -119,16 +121,12 @@ a:hover {
 
 a:not([href]) {
 	text-decoration: none;
+	cursor: default;
 }
 
 img {
 	display: block;
 	height: auto;
-}
-
-h1,
-h2 {
-	letter-spacing: -0.03em;
 }
 
 img,
@@ -274,6 +272,12 @@ textarea {
 	max-width: 70rem;
 }
 
+.container--absurd {
+	max-width: unset;
+	margin: 1em 0 0;
+	padding: 0;
+}
+
 .column {
 	display: flex;
 	flex-direction: column;
@@ -305,23 +309,6 @@ textarea {
 	mask-mode: alpha;
 }
 
-/*a {
-	color: #0064c1;
-	transition: color 300ms ease-out, box-shadow 300ms ease-out;
-	background: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1" height="1"%3E%3Crect x="0" y="0.5" width="1" height="0.5" fill="rgba(0, 100, 193, 0.35)"/%3E%3C/svg%3E') left bottom repeat-x;
+mark {
+	background-color: #0ff5;
 }
-
-a:visited {
-	color: #80b2e0;
-}
-
-a:active,
-a:hover {
-	outline-width: 0;
-}
-
-a:hover {
-	box-shadow: inset 0 -1px #3000c1;
-	color: #3000c1;
-	transition: color 0s, box-shadow 0s;
-}*/
