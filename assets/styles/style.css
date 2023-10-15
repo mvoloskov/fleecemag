@@ -34,7 +34,9 @@
 	background-color: var(--control);
 }
 
-.back-button {
+.back-button,
+.back-button,
+.back-button:focus-visible {
 	max-width: 1.7em;
 	background-size: 1.3em;
 	background-image: url(/assets/images/back.svg);
