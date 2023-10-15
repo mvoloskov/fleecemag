@@ -7,11 +7,11 @@
 			--sqsize: 16px;
 			--color: hsl(0, 0%, 90%);
 		}
-
+/*
 		#alt:target {
 			--color: #acd8fc;
 		}
-
+*/
 		.corner {
 			position: absolute;
 			width: var(--sqsize);

@@ -19,24 +19,30 @@
 	color: transparent;
 	overflow: hidden;
 	align-self: center;
+	transition: var(--bg-transition);
 }
 
 .round-button:focus-visible {
-	outline: 2px solid var(--focus);
+	outline: 0.125em solid var(--focus);
+	outline-offset: 0.125em;
 }
 
 .round-button--ghost {
 	background-color: transparent;
+	transition: var(--bg-transition);
 }
 
-.round-button--ghost:hover,
-.round-button--ghost:focus-visible {
+.round-button--ghost:hover {
 	background-color: var(--control);
 }
 
-.back-button,
-.back-button,
-.back-button:focus-visible {
+.round-button--ghost:focus-visible {
+	background-color: var(--control--focus);
+	outline: 0.125em solid var(--focus);
+	outline-offset: 0.125em;
+}
+
+.back-button {
 	max-width: 1.7em;
 	background-size: 1.3em;
 	background-image: url(/assets/images/back.svg);
@@ -46,13 +52,11 @@
 	background-image: url(/assets/images/back.svg#alt);
 }
 
-.theme-button,
-.theme-button:focus-visible {
+.theme-button {
 	background-image: url(/assets/images/moon.svg);
 }
 
-:root.dark .theme-button,
-:root.dark .theme-button:focus-visible {
+:root.dark .theme-button {
 	background-image: url(/assets/images/sun.svg);
 }
 

@@ -37,12 +37,12 @@
 	--accent: var(--blue-9);
 	--control: var(--c4);
 	--control--hover: var(--c6);
+	--control--focus: var(--blue-6);
 	--transition-duration: 0.2s;
 	--bg-transition: background var(--transition-duration);
 
 	--focus: var(--accent);
 	--padding: calc(1.5em * 0.295) calc(1.5em * 0.412);
-	/*	--focused: drop-shadow(0 0 0.2em var(--focus)) drop-shadow(0 0 0.5em var(--focus));*/
 	--focused: solid 2px var(--focus);
 
 	font-variant-ligatures: normal;
@@ -156,7 +156,7 @@ input:hover {
 
 input:focus {
 	outline: none;
-	background-image: url(/assets/images/squircle.svg#alt);
+	background-color: var(--control--focus);
 }
 
 button {
@@ -179,8 +179,7 @@ button:focus {
 }
 
 button:focus-visible {
-	outline: none;
-	background-image: url(/assets/images/squircle.svg#alt);
+	background-color: var(--control--focus);
 }
 
 select {
@@ -205,7 +204,7 @@ select:focus {
 
 select:focus-visible {
 	outline: none;
-	background-image: url(/assets/images/squircle.svg#alt);
+	background-color: var(--control--focus);
 }
 
 .focus-ring--arrow {
