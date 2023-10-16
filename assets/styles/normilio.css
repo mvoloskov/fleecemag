@@ -82,6 +82,19 @@ svg {
 	--c10: #7c7a85;
 	--c11: #b5b2bc;
 	--c12: #eeeef0;
+
+	--blue-1: #0d1520;
+	--blue-2: #111927;
+	--blue-3: #0d2847;
+	--blue-4: #003362;
+	--blue-5: #004074;
+	--blue-6: #104d87;
+	--blue-7: #205d9e;
+	--blue-8: #2870bd;
+	--blue-9: #0090ff;
+	--blue-10: #3b9eff;
+	--blue-11: #70b8ff;
+	--blue-12: #c2e6ff;
 }
 
 body {
