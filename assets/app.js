@@ -31,3 +31,24 @@ window.toggleTheme = () => {
 	if (isDark) lightMode()
 	else darkMode()
 }
+
+window.subscribe = async e => {
+	e.preventDefault()
+	const submitButton = document.querySelector('[data-submit-button]')
+	const formStatus = document.querySelector('[data-form-status]')
+	submitButton.setAttribute('aria-busy', 'true')
+	formStatus.innerText = ''
+	const formData = new FormData(e.target)
+	const { status } = await fetch('https://formcarry.com/s/qaY3xdswOK', {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+		body: JSON.stringify(Object.fromEntries(formData)),
+	})
+	submitButton.removeAttribute('aria-busy')
+	if (status < 399) {
+		formStatus.innerText = 'Done!'
+		e.target.reset()
+	} else {
+		formStatus.innerText = 'Failed. Try again?'
+	}
+}

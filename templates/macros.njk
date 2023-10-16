@@ -37,25 +37,29 @@
 		<h2>{{ title }}</h2>
 	{% endif %}
 	<section class="sign-up">
-		<form class="form" action="#">
+		<form class="form" onsubmit="subscribe(event)" accept-charset="utf-8" action="#" method="POST">
 			<div class="form__field">
 				<label class="form__label" for="sign-up-email">Email</label>
 				<div class="focus-ring">
-					<input id="sign-up-email" class="form__input squircle" type="email" name="email" placeholder="laia@fleecemag.com" />
+					<input id="sign-up-email" class="form__input squircle" type="email" name="email" placeholder="laia@fleecemag.com" required />
+					<input class="ih" name="_gotcha" type="email" placeholder="Retype your email" aria-hidden="true" tabindex="-1">
 				</div>
 			</div>
-			<div class="focus-ring">
-				<button class="form__button squircle">Sign up</button>
+			<div class="form__status">
+				<div class="focus-ring">
+					<button class="form__button squircle" data-submit-button>Sign up</button>
+				</div>
+				<span data-form-status></span>
 			</div>
 		</form>
 		<article class="pitch">
 			<p class="flush-top">
-				Get instant access to all articles, past and future. We'll also occasionally send you bite-sized food for thought to keep your mind occupied.<br>
-				<small>For example, the latest issue was about rock music in Cambodia before Khmer Rouge.</small>
+				You will get access to all articles. Once we launch, we'll also occasionally send you bite-sized food for thought to keep your mind occupied.<br>
+				<small>For example, the first issue will be about rock music in Cambodia before Khmer Rouge.</small>
 			</p>
-			<p>All articles are dynamic&#8239;—&#8201;they update as new info comes in. You can opt in to receive article updates.</p>
+			<p>All articles are dynamic&#8239;—&#8201;they update as new info comes in. You can opt in to receive those updates.</p>
 			<p>We never write about news, politics and drama. Already better than 𝕏!</p>
-			<p class="small">By signing up, you agree to our <a href="#">privacy policy</a>.</p>
+			<p class="small">You will get exactly one email: when Fleece Mag is out.</p>
 			<b class="price">
 				<s>$8<small>/mo</small></s> <small>Free until launch</small>
 			</b>

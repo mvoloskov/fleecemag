@@ -174,9 +174,12 @@ button {
 	line-height: inherit;
 	cursor: pointer;
 	transition: var(--bg-transition);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 1.3em;
 }
 
-button:hover {
+button:not(:disabled)hover {
 	background-color: var(--control--hover);
 }
 
@@ -184,8 +187,23 @@ button:focus {
 	outline: none;
 }
 
-button:focus-visible {
+button:not(:disabled):focus-visible {
 	background-color: var(--control--focus);
+}
+
+button:disabled {
+	color: var(--c8);
+	cursor: not-allowed;
+}
+
+button[aria-busy='true'] {
+	color: transparent;
+	background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle stroke='%23211f26' stroke-width='2' stroke-linecap='round' stroke-dasharray='30,100' cx='10' cy='10' r='8' fill='none'%3E%3CanimateTransform attributeName='transform' type='rotate' dur='1s' repeatCount='indefinite' from='0 10 10' to='360 10 10' /%3E%3C/circle%3E%3C/svg%3E");
+}
+
+:root.dark button[aria-busy='true'] {
+	color: transparent;
+	background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle stroke='%23fdfcfd' stroke-width='2' stroke-linecap='round' stroke-dasharray='30,100' cx='10' cy='10' r='8' fill='none'%3E%3CanimateTransform attributeName='transform' type='rotate' dur='1s' repeatCount='indefinite' from='0 10 10' to='360 10 10' /%3E%3C/circle%3E%3C/svg%3E%0A");
 }
 
 select {
