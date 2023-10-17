@@ -33,25 +33,18 @@
 	--blue-10: #0588f0;
 	--blue-11: #0d74ce;
 	--blue-12: #113264;
-
 	--accent: var(--blue-9);
 	--control: var(--c4);
 	--control--hover: var(--c6);
 	--control--focus: var(--blue-6);
-	--transition-duration: 0.2s;
-
-	/*	will be set in JS to "background var(--transition-duration)"*/
-	--bg-transition: none;
-
-	--root-transition: var(--bg-transition), color var(--transition-duration);
-	/*	transition: var(--root-transition) will be added here by js*/
-
 	--focus: var(--accent);
-	--padding: calc(1.5em * 0.295) calc(1.5em * 0.412);
+	--padding: 0.4425em 0.618em; /* don't ask */
 	--focused: solid 2px var(--focus);
+	color: var(--c12);
+	background-color: var(--c1);
+
 	--serif: 'Georgia', serif;
 	--sans: 'Trebuchet MS', sans-serif;
-
 	font-variant-ligatures: normal;
 	text-rendering: optimizeLegibility;
 	font-family: var(--serif);
@@ -61,8 +54,11 @@
 	flex-direction: column;
 	min-height: 100%;
 
-	color: var(--c12);
-	background-color: var(--c1);
+	/*	will be set in JS to "background var(--transition-duration)"*/
+	--bg-transition: none;
+	--root-transition: var(--bg-transition), color var(--transition-duration);
+	/*	transition: var(--root-transition) will be added here by js*/
+	--transition-duration: 0.2s;
 }
 
 svg {
