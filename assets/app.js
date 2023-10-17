@@ -1,9 +1,10 @@
+import './turbo.js'
+
 const root = document.documentElement
-const mediaDark = window.matchMedia('(prefers-color-scheme: dark)').matches
 
 let savedTheme = window.localStorage.getItem('theme')
 if (!savedTheme) {
-	savedTheme = mediaDark ? 'dark' : 'light'
+	savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 	window.localStorage.setItem('theme', savedTheme)
 }
 
@@ -44,6 +45,8 @@ window.subscribe = async e => {
 		headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
 		body: JSON.stringify(Object.fromEntries(formData)),
 	})
+	// const status = 200
+	// await new Promise(res => setTimeout(res, 1000))
 	submitButton.removeAttribute('aria-busy')
 	if (status < 399) {
 		formStatus.innerText = 'Done!'
