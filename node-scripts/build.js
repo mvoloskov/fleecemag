@@ -21,7 +21,7 @@ const getNjk = () =>
 	})
 
 export const generateArticles = () => {
-	const njk = getNjk()
+	const njk = getNjk() // bump
 
 	const articleFiles = fs.readdirSync('articles')
 	const articles = []
