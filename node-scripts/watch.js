@@ -21,4 +21,7 @@ watcher.on('all', (_event, path) => {
 })
 
 const server = createServer((req, res) => serve(req, res, { public: 'public', cleanUrls: true }))
-server.listen(3000, () => console.log(new Date(), `http://localhost:3000, http://${getIp()}:3000`))
+server.listen(3000, () => {
+	const ip = getIp()
+	console.log(new Date(), ip ? `http://localhost:3000, http://${getIp()}:3000` : 'http://localhost:3000')
+})
