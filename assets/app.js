@@ -1,4 +1,4 @@
-import './turbo.js'
+import './scripts/turbo.js'
 
 const root = document.documentElement
 
