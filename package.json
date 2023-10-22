@@ -9,7 +9,9 @@
 	"author": "Milo Xeon",
 	"license": "UNLICENSED",
 	"dependencies": {
+		"csso": "^5.0.5",
 		"gray-matter": "^4.0.3",
+		"html-minifier": "^4.0.0",
 		"markdown-it": "^13.0.2",
 		"nunjucks": "^3.2.4"
 	},
